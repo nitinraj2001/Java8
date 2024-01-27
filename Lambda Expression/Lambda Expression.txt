@@ -1,0 +1,38 @@
+Lambda Expression is an anonmynous function. It has no access modifier and return type.
+
+Functional Interface:- It is an interface which has only one abstract method. Java provides an anotation @FunctionalInterface, which is used to declare an interface as functional interface.
+
+Why use Lambda Expression?
+
+    1. It is used to implement functional interface.
+    2. Codes can be done in less number of lines.
+
+Java Lambda Expression Syntax
+
+     (argument-list) -> {body}  
+
+A lambda expression can have zero or any number of arguments.
+
+     () -> { System.out.println("Welcome to the world of lambda expression"); } ---------- lambda expression with no parameter
+     
+     (name) -> {System.out.println("My name is {}", name); } --------------------------------- lambda expression with single parameter
+
+     (a,b) -> { System.out.println("Sum of two numbers is {}", (a+b)); } --------------------- lambda expression with two parameters
+
+     ArrayList<String> object= new ArrayList<String>(); 
+     object.add("Apple");
+     object.add("Mango");
+     // Now we are going to iterate the list using lambda expression
+     object.forEach((x) -> System.out.println(x)); 
+
+Java lambda expression can be used in the collection framework. It provides efficient and concise way to iterate, filter and fetch data.
+
+// Let Say Product is a class which has three field product_id, name and price. We have a list of products and we want to sort it using collections, how do we achieve it using lambda expression?
+   
+    Collections.sort(product_list,(p1,p2) -> return p1.name.compareTo(p2.name))); 
+
+// Let say we have a list of product and we want to get all products whose price are greater than 20000 using lambda expression?
+    
+    Stream<Product> filtered_data = list.stream().filter(p -> p.price > 20000);  
+    filtered_data.forEach((x) -> System.out.println(x.name+" " +x.price));
+
